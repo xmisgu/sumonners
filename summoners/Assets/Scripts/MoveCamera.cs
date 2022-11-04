@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class MoveCamera : MonoBehaviour
 {
-    public GameObject player;
+    public Transform cameraPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +14,6 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //basic camera follow of players position and rotation
-        transform.position = player.transform.position;
-        transform.rotation = player.transform.rotation;
+        transform.position = cameraPosition.position;   
     }
 }
