@@ -30,13 +30,13 @@ public class Interactor : MonoBehaviour
 
                 if (Keyboard.current.eKey.wasPressedThisFrame) _interactable.Interact(this);
             }
-            else
-            {
-                if (_interactable != null) _interactable = null;
-                if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
-            }
+            
         }
-
+        else
+        {
+            if (_interactable != null) _interactable = null;
+            if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
+        }
     }
 
     private void OnDrawGizmos()
