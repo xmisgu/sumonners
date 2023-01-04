@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
-    //chuj git test chuj
     // Update is called once per frame
     void Update()
     {
