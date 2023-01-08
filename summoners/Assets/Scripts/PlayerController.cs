@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     public Transform orientation;
     float horizontalInput;
     float verticalInput;
-
+    public bool isVR;
+    public GameObject XR;
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -28,6 +29,11 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        if (!isVR)
+        {
+            Destroy(XR);
+        }
+        
     }
     // Update is called once per frame
     void Update()
