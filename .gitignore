@@ -2,14 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/summoners
-Library/[Tt]emp/
-Library/[Oo]bj/
-Library/[Bb]uild/
-Library/[Bb]uilds/
-Library/[Ll]ogs/
-Library/[Mm]emoryCaptures/
-[Uu]ser[Ss]ettings/
+summoners/[Ll]ibrary/
+summoners/[Tt]emp/
+summoners/[Oo]bj/
+summoners/[Bb]uild/
+summoners/[Bb]uilds/
+summoners/[Ll]ogs/
+summoners/[Uu]ser[Ss]ettings/
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
