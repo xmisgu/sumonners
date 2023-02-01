@@ -31,8 +31,8 @@ public class Pickup2 : MonoBehaviour
     }
     void carry(GameObject o)
     {
-        // o.GetComponent<Rigidbody>().isKinematic = false;
-        o.GetComponent<Rigidbody>().freezeRotation = true;
+        o.GetComponent<Rigidbody>().isKinematic = false;
+       // o.GetComponent<Rigidbody>().freezeRotation = true;
         o.transform.position = mainCamera.transform.position + mainCamera.transform.forward * distance;
     }
     void pickup()
