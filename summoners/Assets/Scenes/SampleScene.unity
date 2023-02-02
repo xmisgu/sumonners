@@ -713,30 +713,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b2253bc37f8856a419f819daa0daa3c8, type: 3}
   m_PrefabInstance: {fileID: 135689772}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &135711713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 135711713, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-  m_PrefabInstance: {fileID: 2157123537123040328}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &135711715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135711713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4832fd3a2025c34d938bf7ebd6082ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1288491730}
-  mouseSensitivity: 2
---- !u!4 &135711716 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 135711714, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-  m_PrefabInstance: {fileID: 2157123537123040328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136993355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,7 +5258,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2186430941476567602, guid: 06834f588349cf946bbe10e0508ac067, type: 3}
 --- !u!4 &1241120089 stripped
@@ -5428,24 +5404,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2157123538204871406, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
   m_PrefabInstance: {fileID: 2157123537123040328}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1288491730 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2157123538204871407, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-  m_PrefabInstance: {fileID: 2157123537123040328}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1288491735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288491726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f94fcfb8cd852046b8acd8232daea54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 3
 --- !u!1 &1317750413 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6754674874353905211, guid: 3d2e1d573d0ed3f4db7cbd36b30dc8dd, type: 3}
@@ -9011,34 +8969,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 135711713, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135711713, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 135711714, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 135711714, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.293
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288491731, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288491731, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: PickupRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288491731, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
-      propertyPath: PickupTarget
-      value: 
-      objectReference: {fileID: 135711716}
     - target: {fileID: 2157123538204871406, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9110,7 +9040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3801676980541276758, guid: 97e4cdb8f38f28a4abb63715fac5e7fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.508995
+      value: -1.388
       objectReference: {fileID: 0}
     - target: {fileID: 3801676980541276758, guid: 97e4cdb8f38f28a4abb63715fac5e7fa, type: 3}
       propertyPath: m_LocalRotation.w

@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Grounded");
             rb.drag = groundDrag;
-            Debug.Log("grounded");
         }
         else
             rb.drag = 0;
