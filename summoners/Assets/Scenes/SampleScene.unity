@@ -1363,6 +1363,11 @@ Transform:
   m_Father: {fileID: 866386794}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &564835284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2a45c20301f7b14684d06f7aa4f871c, type: 3}
+  m_PrefabInstance: {fileID: 1462177468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576086372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rug
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2a45c20301f7b14684d06f7aa4f871c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a45c20301f7b14684d06f7aa4f871c, type: 3}
 --- !u!4 &1462177469 stripped
@@ -3587,6 +3596,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2a45c20301f7b14684d06f7aa4f871c, type: 3}
   m_PrefabInstance: {fileID: 1462177468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1462177472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564835284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0786fb9e5b0117540aa49334e5cd2ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompt: Press [E] To interact
+--- !u!65 &1462177473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564835284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.08999998, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1478453483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9166790563345751610, guid: 3d2e1d573d0ed3f4db7cbd36b30dc8dd, type: 3}
