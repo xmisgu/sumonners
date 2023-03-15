@@ -3442,7 +3442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1288491726}
   teleporter: {fileID: 1638052243}
-  tp1: {fileID: 0}
+  tp1: {fileID: 1575652206}
   tp2: {fileID: 1119208415}
   tp3: {fileID: 559710754}
   selectedLvl: 0
@@ -3853,7 +3853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1575652207
 Transform:
   m_ObjectHideFlags: 0
@@ -6066,6 +6066,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2157123537289118130, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.112
+      objectReference: {fileID: 0}
     - target: {fileID: 2157123538204871406, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6113,6 +6117,10 @@ PrefabInstance:
     - target: {fileID: 2157123538204871407, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064026905679379473, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
