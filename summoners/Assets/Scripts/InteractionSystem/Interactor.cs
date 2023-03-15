@@ -9,22 +9,21 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float _interactionPointRadius = 0.5f;
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] private InteractionPromptUI _interactionPromptUI;
+    [SerializeField] private Camera _camera;
 
-    private readonly Collider[] _colliders = new Collider[3];
-    //[SerializeField] private int _numFound;
 
     private IInteractable _interactable;
-
     private void Update()
     {
-        int _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactableMask);
-
+        Vector3 _rayDirection = _interactionPoint.transform.position - _camera.transform.position;
+        RaycastHit hit;
+        float distance = Vector3.Distance(_camera.transform.position, _interactionPoint.transform.position);
+        bool isHit = Physics.Raycast(_camera.transform.position, _rayDirection, out hit, distance, _interactableMask);
         //Check for interaction item
-        if(_numFound > 0)
+        if(isHit)
         {
-            _interactable = _colliders[0].GetComponent<IInteractable>();
-
-            if(_interactable != null)
+            _interactable = hit.collider.GetComponent<IInteractable>();
+            if (_interactable != null)
             {
                 if (!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
@@ -41,7 +40,7 @@ public class Interactor : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
+        Gizmos.color = Color.red; 
+        Gizmos.DrawRay(_camera.transform.position, _interactionPoint.transform.position - _camera.transform.position);
     }
 }
