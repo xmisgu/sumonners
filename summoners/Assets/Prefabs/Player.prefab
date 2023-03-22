@@ -238,6 +238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _interactionPromptUI: {fileID: 7592338656787979004}
+  _camera: {fileID: 0}
 --- !u!114 &714734401243051930
 MonoBehaviour:
   m_ObjectHideFlags: 0

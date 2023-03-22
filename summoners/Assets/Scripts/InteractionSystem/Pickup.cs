@@ -2,57 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class Pickup : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    [SerializeField] private LayerMask PickupMask;
-    [SerializeField] private Camera PlayerCamera;
-    [SerializeField] private Transform PickupTarget;
-    [Space]
-    [SerializeField] private float PickupRange;
-    private Rigidbody CurrentObject;
-    void Start()
+    [SerializeField] private string _prompt;
+    public string InteractionPrompt => _prompt;
+    private float pickupSpeed = 5f;
+    private bool isInteracted = false;
+    public GameObject player;
+
+    public bool Interact(Interactor interactor)
     {
-        
+
+        isInteracted = true;
+        Debug.Log("Pickup");
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Vector3 playerPositionOffset = player.transform.position;
+        if (isInteracted)
         {
-            
-            if (CurrentObject)
-            {
-
-                CurrentObject.useGravity = true;
-                CurrentObject = null;
-                return;
-                
-            }
-
-            Ray CameraRay = PlayerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            if(Physics.Raycast(CameraRay, out RaycastHit HitInfo, PickupRange, PickupMask))
-            {
-
-                CurrentObject = HitInfo.rigidbody;
-                CurrentObject.useGravity = false;
-
-            }
+            GetComponent<Collider>().enabled = false;
+            transform.position = Vector3.MoveTowards(transform.position, playerPositionOffset, pickupSpeed * Time.deltaTime);
         }
     }
-
-    private void FixedUpdate()
-    {
-        if (CurrentObject)
-        {
-
-            Vector3 DirectionToPoint = PickupTarget.position - CurrentObject.position;
-            float DistanceToPoint = DirectionToPoint.magnitude;
-            CurrentObject.velocity = DirectionToPoint * 1f * DistanceToPoint;
-
-
-        }
-    }
-
 }
