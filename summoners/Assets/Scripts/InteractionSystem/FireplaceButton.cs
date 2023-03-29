@@ -6,9 +6,9 @@ public class FireplaceButton : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
-    private Vector3 targetPosition = new Vector3(4.674f, 2.092f, 3.76f);
+    private Vector3 targetPosition = new Vector3(4.35f, 1.663f, 3.079f);
     private bool isInteracted = false;
-    private float speed = 1f;
+    private float speed = 0.5f;
 
     public bool Interact(Interactor interactor)
     {
