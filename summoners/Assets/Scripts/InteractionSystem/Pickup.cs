@@ -11,23 +11,31 @@ public class Pickup : MonoBehaviour, IInteractable
     private bool isInteracted = false;
     private bool isPickedUp = false;
 
+    private Vector3 playerPositionOffset;
+    public float pickupSpeed = 3f;
+    //dupa :)
     public bool Interact(Interactor interactor)
-    { 
+    {
         isInteracted = true;
         Debug.Log("Pickup");
         return true;
     }
 
+
     private void Update()
     {
+        playerPositionOffset = player.transform.position + Vector3.forward * 2f;
+
         if (isInteracted)
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+        { 
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            transform.parent = player.transform;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Collider>().enabled = false;
+            transform.parent = player.transform;
+            transform.localPosition = new Vector3(0, 0, 0) + transform.forward;
+
             isInteracted = false;
         }
     }
 }
+

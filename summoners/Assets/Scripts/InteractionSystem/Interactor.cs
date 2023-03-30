@@ -9,7 +9,8 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] private InteractionPromptUI _interactionPromptUI;
     [SerializeField] private Camera _camera;
-
+    [SerializeField] private LayerMask pickupableMask;
+    public int test;
 
     private IInteractable _interactable;
     private void Update()
@@ -17,7 +18,7 @@ public class Interactor : MonoBehaviour
         Vector3 _rayDirection = _interactionPoint.transform.position - _camera.transform.position;
         RaycastHit hit;
         float distance = Vector3.Distance(_camera.transform.position, _interactionPoint.transform.position);
-        bool isHit = Physics.Raycast(_camera.transform.position, _rayDirection, out hit, distance, _interactableMask);
+        bool isHit = Physics.Raycast(_camera.transform.position, _rayDirection, out hit, distance, _interactableMask | pickupableMask);
         //Check for interaction item
         if(isHit)
         {
