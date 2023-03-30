@@ -16,7 +16,6 @@ public class ChandelierPull : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-
         isInteracted = true;
         Debug.Log("Level completed");
         return true;

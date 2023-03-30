@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionPoint: {fileID: 7064026905679379473}
-  _interactionPointRadius: 0.5
   _interactableMask:
     serializedVersion: 2
     m_Bits: 128

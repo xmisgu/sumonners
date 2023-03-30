@@ -12,7 +12,7 @@ public class LevelSelect : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        teleport.selectedLvl= level;
+        teleport.selectedLvl = level;
         Debug.Log("Level selected");
         return true;
     }
