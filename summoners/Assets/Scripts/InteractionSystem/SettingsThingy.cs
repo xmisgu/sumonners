@@ -33,7 +33,10 @@ public class SettingsThingy : MonoBehaviour, IInteractable
     private void Update()
     {
         if (isInteracted) {
-            ZoomCamera(30);
+            player.transform.position = new Vector3(-10.5f, 3, 0.5f);
+            player.transform.eulerAngles = new Vector3(0, 80, 0);
+            ZoomCamera(40);
+            RotateCamera(new Vector3(0, 0, 0));
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 Cursor.visible = false;
@@ -48,6 +51,14 @@ public class SettingsThingy : MonoBehaviour, IInteractable
 
     void ZoomCamera(float target)
     {
-        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, target, 100 * Time.deltaTime);
+        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, target, 30 * Time.deltaTime);
+    }
+    void RotateCamera(Vector3 target)
+    {
+        var step = 10 * Time.deltaTime;
+        if (playerCamera.transform.eulerAngles.x < target.x)
+            playerCamera.transform.Rotate(new Vector3(target.x * step, 0, 0));
+        if (playerCamera.transform.eulerAngles.y < target.y)
+            playerCamera.transform.Rotate(new Vector3(0, target.y * step, 0));
     }
 }
