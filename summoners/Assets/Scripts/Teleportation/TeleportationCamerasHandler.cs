@@ -7,6 +7,7 @@ public class TeleportationCamerasHandler : MonoBehaviour
     [SerializeField] GameObject CameraLvl1;
     private void OnEnable()
     {
+        Debug.Log(":aekfgjhsdkjhfdshbf");
         CameraLvl1.SetActive(true);
     }
 
