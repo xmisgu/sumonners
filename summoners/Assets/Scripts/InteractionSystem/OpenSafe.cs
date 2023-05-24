@@ -12,9 +12,11 @@ public class OpenSafe : MonoBehaviour, IInteractable
     [SerializeField] private Camera camera;
     [SerializeField] private string[] code;
     [SerializeField] private float speed;
-
+    [SerializeField] private GameObject safeDoor;
 
     private Vector3 newDirection;
+    private string[] inputCode = new string[4];
+    private bool isDoorRotated = false;
     private bool isInteracted;
     private bool isRotated = false;
     private Vector3 target = new Vector3(34.5f, 2f, 0f);
@@ -25,12 +27,22 @@ public class OpenSafe : MonoBehaviour, IInteractable
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+    private void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     private void LockPlayerMovement()
     {
         playerController.enabled = false;
         playerMoveAndRotation.enabled = false;
     }
-    public void RotateCamera()
+    private void UnlockPlayerMovement()
+    {
+        playerController.enabled = true;
+        playerMoveAndRotation.enabled = true;
+    }
+    private void RotateCamera()
     {
         var step = speed * Time.deltaTime;
         camera.fieldOfView = Mathf.MoveTowards(camera.fieldOfView, 59, speed * Time.deltaTime * 20);
@@ -45,11 +57,25 @@ public class OpenSafe : MonoBehaviour, IInteractable
 
 
     }
-    private bool CheckCode(string[] code)
+    private void RotateSafeDoor()
     {
-        if(this.code == code)
-            return true;
-        return false;
+        var step = speed * Time.deltaTime * 60;
+        if (safeDoor.transform.localRotation.z >= -0.65)
+        {
+            safeDoor.transform.Rotate(new Vector3(0, 0, -step));
+        }
+        else
+            isDoorRotated = true;
+    }   
+    private bool CheckCode(string[] inpCode)
+    {
+        
+        for(int i = 0; i < inpCode.Length; i++)
+        {
+            if (inpCode[i] != code[i])
+                return false;
+        }
+        return true;
     }
     public bool Interact(Interactor interactor)
     {
@@ -75,7 +101,22 @@ public class OpenSafe : MonoBehaviour, IInteractable
         }
         else if (isRotated)
         {
+            for(int i = 0; i < code.Length; i++)
+            {
+                inputCode[i] = codeInput[i].text;
+            }
             canvas.SetActive(true);
+            if (CheckCode(inputCode))
+            {
+                LockCursor();
+                UnlockPlayerMovement();
+                canvas.SetActive(false);
+
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                if (!isDoorRotated)
+                    RotateSafeDoor();
+
+            }
         }
     }
 }
