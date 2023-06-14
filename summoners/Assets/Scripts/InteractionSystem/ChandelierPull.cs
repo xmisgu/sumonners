@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChandelierPull : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
+    [SerializeField] AudioSource shelfSound;
     public GameObject arm;
     public GameObject shelf;
     public string InteractionPrompt => _prompt;
@@ -18,6 +19,7 @@ public class ChandelierPull : MonoBehaviour, IInteractable
     {
         isInteracted = true;
         Debug.Log("Level completed");
+        shelfSound.Play();
         return true;
     }
 

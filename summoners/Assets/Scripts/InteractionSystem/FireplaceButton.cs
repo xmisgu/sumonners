@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireplaceButton : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
+    [SerializeField] AudioSource buttonSound;
     public string InteractionPrompt => _prompt;
     private Vector3 targetPosition = new Vector3(4.35f, 1.663f, 3.079f);
     private bool isInteracted = false;
@@ -14,6 +15,7 @@ public class FireplaceButton : MonoBehaviour, IInteractable
     {
         isInteracted = true;
         Debug.Log("check");
+        buttonSound.Play();
         return true;
     }
 

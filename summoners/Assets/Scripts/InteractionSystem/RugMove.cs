@@ -7,6 +7,7 @@ public class RugMove : MonoBehaviour, IInteractable
 
     //private bool moved = false;
     [SerializeField] private string _prompt;
+    [SerializeField] AudioSource rugSound;
     public string InteractionPrompt => _prompt;
     //private Transform target;
 
@@ -25,6 +26,7 @@ public class RugMove : MonoBehaviour, IInteractable
     {
         isInteracted = true;
         Debug.Log("check");
+        rugSound.Play();
         return true;
     }
 
