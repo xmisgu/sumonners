@@ -7375,6 +7375,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2157123538204871406, guid: 525223991a2ef0a43a6a9be2e58c38e9, type: 3}
   m_PrefabInstance: {fileID: 2157123537123040328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1292971753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 710188885748866789, guid: 44c9227c012dcbc46bb436466ecb5a57, type: 3}
+  m_PrefabInstance: {fileID: 1926119150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1310139422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3431729849808221642, guid: d627da0ec5657ee40a66fc33dde84769, type: 3}
@@ -7905,6 +7910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prompt: Press [E] To interact
   buttonSound: {fileID: 1978682596}
+  ClockFace: {fileID: 1292971753}
 --- !u!1001 &1462177468
 PrefabInstance:
   m_ObjectHideFlags: 0
