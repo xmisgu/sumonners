@@ -30,13 +30,12 @@ public class FireplaceButton : MonoBehaviour, IInteractable
         if (isInteracted)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, targetPosition, step);
-           // ClockFace.transform.Rotate(new Vector3(0, 0, -100) * Time.deltaTime);
-            if (ClockFace.transform.rotation.z < 0.65)
+            if (ClockFace.transform.rotation.z > -0.65)
+            {
                 Debug.Log(ClockFace.transform.rotation.z);
                 ClockFace.transform.Rotate(new Vector3(0, 0, -(rotationSpeed * Time.deltaTime)));
-            // if (ClockFace.transform.eulerAngles.z > finalRotation.z)
-            //     ClockFace.transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
-            // ClockFace.Rotate
+            }
+
         }
 
 

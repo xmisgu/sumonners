@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public LayerMask interactable;
     bool grounded;
 
 
@@ -50,7 +51,16 @@ public class PlayerController : MonoBehaviour
             rb.drag = groundDrag;
         }
         else
-            rb.drag = 0;
+        {
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, interactable);
+            if (grounded)
+            {
+                //Debug.Log("Grounded");
+                rb.drag = groundDrag;
+            }
+            else
+                rb.drag = 0;
+        }
     }
     private void FixedUpdate()
     {
